@@ -3,11 +3,12 @@
 //  TheCatApi
 //
 //  Created by Andres Hidalgo on 9/11/2022.
-//  Copyright © 2019 Andres Hidalgo. All rights reserved.
+//  Copyright © 2022 Andres Hidalgo. All rights reserved.
 //
 
 import Foundation
 
+//interface con la funcion value
 protocol TheCatApiService {
     func value() -> String
 }
@@ -55,20 +56,10 @@ class CatService: NSObject {
             do {
                 let decoder =  JSONDecoder()
                 self.items = try decoder.decode(Array<CatModel>.self, from: dataResponse.data!)
+                    //decodifiacacion organizada por id
                     .sorted(by: { $0.id < $1.id })
                 
-                //setup directory and file
-                let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-                    .appendingPathComponent(TheCatApi.subDirectory.value(), isDirectory: true)
-                if !FileManager.default.fileExists(atPath: directoryURL.path) {
-                    try FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true)
-                }
-                let fileURLWithPath = URL(fileURLWithPath: TheCatApi.fileNameDataFromServer.value(), relativeTo: directoryURL)
-                    .appendingPathExtension(TheCatApi.fileExtension.value())
                 
-                //save json data
-                try dataResponse.data?.write(to: fileURLWithPath)
-                print(fileURLWithPath.path)
             }catch let error {
                 fatalError(error.localizedDescription)
             }
@@ -77,6 +68,5 @@ class CatService: NSObject {
         }) { (error) in
             fatalError(error.localizedDescription)
         }
-        
     }
 }

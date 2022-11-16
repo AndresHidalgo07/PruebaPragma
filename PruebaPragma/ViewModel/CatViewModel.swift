@@ -3,12 +3,13 @@
 //  TheCatApi
 //
 //  Created by Andres Hidalgo on 9/11/2022.
-//  Copyright © 2019 Andres Hidalgo. All rights reserved.
+//  Copyright © 2022 Andres Hidalgo. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
+//interface que da funcionalidad
 protocol CatViewModelService {
     func loadData(completion: @escaping () -> Void)
     func loadImage(index: Int, completion: @escaping (UIImage?) -> Void)
@@ -27,7 +28,6 @@ class CatViewModel: NSObject {
         print("deinit: CatViewModel")
     }
 }
-
 
 extension CatViewModel: CatViewModelService {
     

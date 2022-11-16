@@ -3,15 +3,19 @@
 //  TheCatApi
 //
 //  Created by Andres Hidalgo on 9/11/2022.
-//  Copyright © 2019 Andres Hidalgo. All rights reserved.
+//  Copyright © 2022 Andres Hidalgo. All rights reserved.
 //
 
 import UIKit
 
 class CatVC: UIViewController {
+    //weak me ayuda a no consumir tanta memoria
+    //Strong no ahorra memoria
+    //lazy var es una variable perezosa
     @IBOutlet weak var tableView: UITableView!
     var viewModel: CatViewModel!
     
+    //inicializa nuestra clase
     static func initWith(title: String, viewModel: CatViewModel) -> CatVC {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "CatVC") as! CatVC

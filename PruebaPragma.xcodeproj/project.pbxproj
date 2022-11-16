@@ -108,18 +108,14 @@
 		0E6BB3B52298EBFF00DCBD87 /* PruebaPragma */ = {
 			isa = PBXGroup;
 			children = (
-				0E6BB3B62298EBFF00DCBD87 /* AppDelegate.swift */,
-				0E6BB3BA2298EBFF00DCBD87 /* Main.storyboard */,
-				0E6BB3BD2298EC0000DCBD87 /* Assets.xcassets */,
-				0E6BB3BF2298EC0000DCBD87 /* LaunchScreen.storyboard */,
+				886A63402924891500B5B423 /* Networking */,
+				886A6343292489AE00B5B423 /* Delegate */,
+				886A633F2924884600B5B423 /* Model */,
+				886A6344292489EE00B5B423 /* Views */,
+				886A634529248A1B00B5B423 /* ViewModel */,
+				886A63412924893100B5B423 /* Controller */,
 				0E6BB3C22298EC0000DCBD87 /* Info.plist */,
-				0EF2E10E2299F01000FB38E5 /* CatVC.swift */,
-				0E6BB3E42298EC7400DCBD87 /* CatViewModel.swift */,
-				0EF2E114229A100B00FB38E5 /* CatCell.swift */,
-				0EF2E115229A100B00FB38E5 /* CatCell.xib */,
-				0EF2E112229A05AA00FB38E5 /* Cat.swift */,
-				0EF2E1102299F24D00FB38E5 /* HttpHelper.swift */,
-				0EF2E10A2299ED4700FB38E5 /* CatService.swift */,
+				0E6BB3BD2298EC0000DCBD87 /* Assets.xcassets */,
 			);
 			path = PruebaPragma;
 			sourceTree = "<group>";
@@ -139,6 +135,66 @@
 				02A592E944CA61D91D540C0B /* Pods_TheCatApi.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		886A633F2924884600B5B423 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0EF2E112229A05AA00FB38E5 /* Cat.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		886A63402924891500B5B423 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				0EF2E10A2299ED4700FB38E5 /* CatService.swift */,
+				0EF2E1102299F24D00FB38E5 /* HttpHelper.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		886A63412924893100B5B423 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0EF2E10E2299F01000FB38E5 /* CatVC.swift */,
+				886A63422924898500B5B423 /* cell */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		886A63422924898500B5B423 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				0EF2E114229A100B00FB38E5 /* CatCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		886A6343292489AE00B5B423 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				0E6BB3B62298EBFF00DCBD87 /* AppDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		886A6344292489EE00B5B423 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0EF2E115229A100B00FB38E5 /* CatCell.xib */,
+				0E6BB3BF2298EC0000DCBD87 /* LaunchScreen.storyboard */,
+				0E6BB3BA2298EBFF00DCBD87 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		886A634529248A1B00B5B423 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0E6BB3E42298EC7400DCBD87 /* CatViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

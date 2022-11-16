@@ -3,7 +3,7 @@
 //  TheCatApi
 //
 //  Created by Andres Hidalgo on 9/11/2022.
-//  Copyright © 2019 Andres Hidalgo. All rights reserved.
+//  Copyright © 2022 Andres Hidalgo. All rights reserved.
 //
 
 import UIKit
@@ -27,7 +27,7 @@ class CatCell: UITableViewCell {
         self.viewModelService = viewModelService
         
 
-        // set cat image
+        // enviar imagen gatos
         if let image = item.image?.image {
             catImageView?.image = image
         }else {

@@ -3,7 +3,7 @@
 //  TheCatApi
 //
 //  Created by Andres Hidalgo on 9/11/2022.
-//  Copyright © 2019 Andres Hidalgo. All rights reserved.
+//  Copyright © 2022 Andres Hidalgo. All rights reserved.
 //
 
 import UIKit
@@ -12,26 +12,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-    func removeTheCatApiDirectory() {
-        do {
-            let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-                            .appendingPathComponent(TheCatApi.subDirectory.value(), isDirectory: true)
-            try FileManager.default.removeItem(at: directoryURL)
-        }catch {
-            print("removeTheCatApiDirectory:  ", error.localizedDescription)
-        }
-    }
-    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         
         let items = [CatModel]()
         let catService = CatService()
         let viewModel = CatViewModel(items: items, catService: catService)
         let vc = CatVC.initWith(title: "CatBreeds", viewModel: viewModel)
-        
+        //inicializar vista
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.rootViewController = UINavigationController(rootViewController: vc)
